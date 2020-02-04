@@ -93,6 +93,13 @@ Figure out how many products are in each category, count each one according to t
     JOIN Category ON Category.Id = Product.CategoryId
     GROUP BY CategoryId
 
+List the customers and the number of orders they have placed:
+
+    SELECT customer.contactName, count(*) 
+    FROM [order]
+    JOIN Customer
+    ON customer.Id = [order].CustomerId
+    GROUP BY customer.Id 
 
 # JOIN in knex
 
