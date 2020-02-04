@@ -176,3 +176,14 @@ in knexfile we see this:
     },
 
 This turns on enforcement of foreign keys
+
+In the seeds folder - knex cleaner ensures that we don't empty migration tables 
+
+    const cleaner = require('knex-cleaner');
+
+    exports.seed = function(knex) {
+    return cleaner.clean(knex, {
+        ignoreTables: ['knex_migrations', 'knex_migrations_lock'], // don't empty migration tables
+    });
+    };
+
