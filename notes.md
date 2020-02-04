@@ -5,7 +5,9 @@ A foreign key is a column in a table that points to a Primary Key in another tab
 
 ## Querying muliple tables (joins)
 
-# SQL (northwinds database)
+# SQL JOIN (northwinds database)
+
+- when using join, it takes every record from one table and every record from the joined table and pulls that data that meets the condition.
 
     SELECT * FROM OrderDetail
     JOIN Product ON OrderDetail.ProductId = Product.Id
@@ -60,6 +62,8 @@ RIGHT JOIN
 FULL JOIN
 
 - Select all records from Left Table and Right Table, regardless of whether the join condition is met or not.
+
+Left joins and right joins are inner joins
 
 So if Ann gets fired we would use a LEFT JOIN so that our query will return the data that is available
 
@@ -153,4 +157,5 @@ The model looks like:
     module.exports = {
     find
     };
+
 
