@@ -166,3 +166,13 @@ The model looks like:
     };
 
 
+in knexfile we see this:
+
+     pool: {
+      afterCreate: (conn, done) => {
+        // runs after a connection is made to the sqlite engine
+        conn.run('PRAGMA foreign_keys = ON', done); // turn on FK enforcement
+      },
+    },
+
+This turns on enforcement of foreign keys
